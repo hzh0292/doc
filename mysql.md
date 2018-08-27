@@ -99,5 +99,5 @@ quit;
 
 ```bash
 sudo service mysql restart
-mysql -uoot -p
+mysql -uroot -p
 ```
