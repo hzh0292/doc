@@ -71,9 +71,33 @@ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo service mysql restart
 ```
 
-## 3.待更新
+## 3.ubuntu18.04设置root用户密码
 
++ 查看默认debian-sys-maint用户的信息
+
+```bash
+sudo cat /etc/mysql/debian.cnf
+```
+
++ 复制debian-sys-maint用户密码，登陆MySQL
+
+```bash
+mysql -udebian-sys-maint -p刚才复制的密码
+```
+
++ 删除本地用户root,再重新新建一个用户root
+
+```sql
 DROP USER 'root'@'localhost';  
-create user 'root'@'%' indentified by '123456';  
-grant all on *.* to "root"@"%" with grant option;  
+create user 'root'@'%' identified by '123456';  
+grant all on *.* to "root"@"%" with grant option;
 flush privileges;  
+quit;
+```
+
++ 重启MySQL服务之后，就可以用root用户和密码登陆了
+
+```bash
+sudo service mysql restart
+mysql -uoot -p
+```
