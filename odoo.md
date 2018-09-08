@@ -31,7 +31,7 @@ cd
 ```bash
 sudo apt install -y python3-venv
 python3 -m venv py3
-source venv/bin/activate
+source py3/bin/activate
 pip install -i https://pypi.douban.com/simple -U pip
 ```
 
