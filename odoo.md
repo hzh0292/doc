@@ -67,7 +67,7 @@ exit
 ## 安装字体等依赖项
 
 ```bash
-sudo apt-get install -y fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont1 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev
+sudo apt-get install -y fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont1 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev ttf-wqy-zenhei ttf-wqy-microhei
 ```
 
 ## 下载安装wkhtmltopdf
