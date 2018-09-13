@@ -59,6 +59,7 @@ sudo apt-get install -y postgresql
 
 ```bash
 sudo su - postgres
+createuser -d -U postgres -R -S -P odoo
 Enter password for new role: *****
 Enter it again:*****
 exit
