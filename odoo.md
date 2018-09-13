@@ -29,7 +29,7 @@ cd
 ## 建立python3虚拟环境（以py3为例）
 
 ```bash
-sudo apt install -y python3-venv
+sudo apt install -y python3-dev python3-venv
 python3 -m venv py3
 source py3/bin/activate
 pip install -i https://pypi.douban.com/simple -U pip
