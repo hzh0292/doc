@@ -47,7 +47,7 @@ grant 权限列表 on 库.表 to "用户名"@"IP地址" with grant option;
 ```
 
 + 权限列表：```select```,```update```,```delete```,```insert```,```alter```,```drop```,```create```,...如果要授予所的权限则使用ALL
-+ 库.表： *.* 表示所有库的所有表
++ 库.表： \*.* 表示所有库的所有表
 
 3.  刷新权限
 
