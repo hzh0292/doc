@@ -93,3 +93,45 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 ```bash
 ./odoo-bin -s
 ```
+
+# 创建Odoo数据库时的“new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)“问题
+
+## Odoo创建数据库时，显示如下错误信息:
+
+> Database creation error: new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)  
+HINT: Use the same encoding as in the template database, or use template0 as template.
+
+## 解决方法：
+
+1. First, we need to drop template1. Templates can’t be dropped, so we first modify it so t’s an ordinary database:
+
+```sql
+UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+```
+
+2. Now we can drop it:
+
+```sql
+DROP DATABASE template1;
+```
+
+3. Now its time to create database from template0, with a new default encoding:
+
+```sql
+CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+```
+
+4. Now modify template1 so it’s actually a template:
+
+```sql
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+```
+
+5. Now switch to template1 and VACUUM FREEZE the template:
+
+```sql
+\c template1
+VACUUM FREEZE;
+```
+
+6. Problem should be resolved.
