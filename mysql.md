@@ -10,7 +10,7 @@ sudo vim /etc/mysql/my.cnf
 
 + 在文件中增加如下内容：
 
-```bash
+```ini
 [client]
 default-character-set = utf8
 
@@ -49,7 +49,7 @@ grant 权限列表 on 库.表 to "用户名"@"IP地址" with grant option;
 + 权限列表：```select```,```update```,```delete```,```insert```,```alter```,```drop```,```create```,...如果要授予所的权限则使用ALL
 + 库.表： \*.* 表示所有库的所有表
 
-3.  刷新权限
+3. 刷新权限
 
 ```sql
 flush privileges;
@@ -61,7 +61,7 @@ flush privileges;
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-```bash
+```ini
 #bind-address		= 127.0.0.1		#注释此行
 ```
 
