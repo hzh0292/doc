@@ -3,8 +3,7 @@
 ## 更新系统
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 
 ## 新建用户（以odoo为例）
@@ -100,8 +99,7 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 ## 更新系统
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 
 ## 切换到root用户
@@ -248,8 +246,7 @@ VACUUM FREEZE;
 ## 更新系统
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 
 ## 切换到root用户
