@@ -342,7 +342,7 @@ pip install phonenumbers
 ./odoo-bin -s
 ```
 
-# 无、odoo12企业版百度云ubuntu16.04安装步骤
+# 五、odoo12企业版百度云ubuntu16.04安装步骤
 
 ## 更新系统
 
@@ -458,9 +458,6 @@ chmod a+x odoo-bin
 
 ```bash
 ./odoo-bin -s
-```
-
-```
 2018-10-22 08:05:25,559 19717 INFO ? odoo: Odoo version 12.0+e-xxxxxx 
 2018-10-22 08:05:25,560 19717 INFO ? odoo: Using configuration file at /home/odoo/.odoorc 
 2018-10-22 08:05:25,560 19717 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo/addons/12.0', '/home/odoo/odoo/odoo/addons'] 
