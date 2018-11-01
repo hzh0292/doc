@@ -43,3 +43,17 @@ sudo apt-get install sublime-text
 git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 cd sublime-text-imfix && ./sublime-imfix
 ```
+
+# 三、查看Ubuntu版本
+
+## 方法一
+
+```bash
+cat /etc/issue
+```
+
+## 方法二
+
+```bash
+sudo lsb_release -a
+```
