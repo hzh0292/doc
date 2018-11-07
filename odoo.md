@@ -468,3 +468,60 @@ chmod a+x odoo-bin
 ```
 
 ## 创建数据库，安装应用......
+
+# 六、ubuntu18.04本地用户odoo12安装步骤（适用于虚拟机、WSL等）
+
+## 更新系统
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+## 安装python3虚拟环境
+
+```bash
+sudo apt install -y python3-dev python3-venv libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont2 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev fonts-wqy-zenhei fonts-wqy-microhei postgresql npm
+```
+
+## 安装less
+
+```bash
+sudo npm install -g less
+```
+
+## 创建数据库角色（同系统本地用户名）
+
+```bash
+sudo su - postgres
+createuser -d -U postgres -R -S -P jeanphy
+Enter password for new role: *****
+Enter it again:*****
+exit
+```
+
+## 下载安装wkhtmltopdf
+
+```bash
+wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
+```
+
+## 克隆源码，安装依赖
+
+```bash
+git clone https://github.com/odoo/odoo.git -b 12.0 --depth=1
+cd odoo
+python3 -m venv venv
+source venv/bin/activate
+pip install -i https://pypi.douban.com/simple -U pip
+pip install -r requirements.txt -i https://pypi.douban.com/simple
+pip install phonenumbers -i https://pypi.douban.com/simple
+```
+
+> 如果报错，再检查看缺什么插件，安装后继续。
+
+## 默认配置启动odoo
+
+```bash
+./odoo-bin -s
+```
