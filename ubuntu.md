@@ -57,3 +57,9 @@ cat /etc/issue
 ```bash
 sudo lsb_release -a
 ```
+
+# 四、查看系统CPU核心数
+
+```
+grep -c ^processor /proc/cpuinfo
+```
