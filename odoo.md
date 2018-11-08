@@ -477,7 +477,7 @@ chmod a+x odoo-bin
 sudo apt update && sudo apt upgrade -y
 ```
 
-## 安装python3虚拟环境
+## 安装环境依赖
 
 ```bash
 sudo apt install -y python3-dev python3-venv libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont2 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev fonts-wqy-zenhei fonts-wqy-microhei postgresql npm
