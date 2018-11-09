@@ -528,7 +528,7 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 
 # windows安装odoo11/12/13，默认打不开。
 
-> 从[nightly](http://nightly.odoo.com)下载的exe安装包，安装后浏览器无法打开127.0.0.1:8069。
+> 从[Odoo Nightly builds](http://nightly.odoo.com)下载的exe安装包，安装后浏览器无法打开127.0.0.1:8069。
 
 ## 解决办法：
 
