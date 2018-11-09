@@ -525,3 +525,11 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 ```bash
 ./odoo-bin -s
 ```
+
+# windows安装odoo11/12/13，默认打不开。
+
+> 从[nightly](http://nightly.odoo.com)下载的exe安装包，安装后浏览器无法打开127.0.0.1:8069。
+
+## 解决办法：
+
+### 找到ODOO目录下*:\Program Files (x86)odoo*\python\Lib\_strptime.py文件，在文件导入模块之后添加一行locale.setlocale(locale.LC_ALL,'en')保存，然后再重启ODOO服务或重启电脑。
