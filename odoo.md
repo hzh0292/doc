@@ -492,8 +492,9 @@ sudo npm install -g less
 ## 创建数据库角色（同系统本地用户名）
 
 ```bash
+sudo service postgresql start # WSL需要手动启动pg服务
 sudo su - postgres
-createuser -d -U postgres -R -S -P jeanphy
+createuser -d -U postgres -R -S -P 角色名
 Enter password for new role: *****
 Enter it again:*****
 exit
