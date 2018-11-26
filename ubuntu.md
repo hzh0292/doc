@@ -63,3 +63,10 @@ sudo lsb_release -a
 ```
 grep -c ^processor /proc/cpuinfo
 ```
+
+# 五、查看和修改ubuntu服务器时区
+
+```bash
+date -R  # 查看
+sudo dpkg-reconfigure tzdata  # 修改，选择Asia/Shanghai
+```
