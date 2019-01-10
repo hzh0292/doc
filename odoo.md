@@ -134,7 +134,7 @@ cd
 sudo apt install -y python3-dev python3-venv
 python3 -m venv venv11
 source venv11/bin/activate
-pip install -i https://pypi.douban.com/simple -U pip
+pip install -U pip
 ```
 
 ## 安装nodejs和less
