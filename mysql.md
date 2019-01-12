@@ -102,3 +102,63 @@ quit;
 sudo service mysql restart
 mysql -uroot -p
 ```
+
+## 4.Windows安装zip格式mysql 8.0.13
+
++ 下载zip包，解压到指定目录
+
+```
+mysql-8.0.13-winx64.zip
+D:\Program Files\mysql-8.0.13-winx64
+```
+
++ 在安装目录下建立配置文件，内容如下：
+
+```
+# D:\Program Files\mysql-8.0.13-winx64\my.cnf
+[mysql]
+default-character-set=utf8
+[mysqld]
+basedir=D:\Program Files\mysql-8.0.13-winx64
+datadir=D:\Program Files\mysql-8.0.13-winx64\data
+character-set-server=utf8
+```
+
++ 以管理员身份运行cmd.exe，初始化数据库
+
+```
+mysqld --initialize --user=mysql --console
+```
+
+> A temporary password is generated for root@localhost:初始密码
+
++ 安装服务
+
+```
+mysqld --install MySQL
+```
+
++ 启动服务
+
+```
+net start MySQL
+```
+
++ 以初始密码登陆数据库
+
+```
+mysql -u root -p
+Enter password:初始密码
+```
+
++ 修改初始密码
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+```
+
++ 停止服务
+
+```
+net stop MySQL
+```
