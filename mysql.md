@@ -112,10 +112,16 @@ mysql-8.0.13-winx64.zip
 D:\Program Files\mysql-8.0.13-winx64
 ```
 
-+ 在安装目录下建立配置文件，内容如下：
++ 添加系统环境变量
 
 ```
-# D:\Program Files\mysql-8.0.13-winx64\my.cnf
+D:\Program Files\mysql-8.0.13-winx64\bin
+```
+
++ 在安装目录下建立配置文件，内容如下：
+
+```ini
+#D:\Program Files\mysql-8.0.13-winx64\my.cnf
 [mysql]
 default-character-set=utf8
 [mysqld]
