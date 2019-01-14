@@ -47,5 +47,5 @@ db.addUser('username','password')
 ##### 2.远程连接
 
 ```bash
-mongo 134.567.345.23:27017/admin -uusername -p
+mongo 47.52.58.56:27017/admin -uusername -p
 ```
