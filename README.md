@@ -2,7 +2,7 @@
 
 Jeanphy资料整理之MarkDown文档
 
-目前有四个主题：
+目前有五个主题：
 
 + [1.python和pip相关](python.md)
 
@@ -10,4 +10,6 @@ Jeanphy资料整理之MarkDown文档
 
 + [3.odoo相关](odoo.md)
 
-+ [4.Ubuntu相关](ubuntu.md)
++ [4.ubuntu相关](ubuntu.md)
+
++ [5.mongodb相关](mongodb.md)
