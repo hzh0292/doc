@@ -74,7 +74,12 @@ sudo service mysql restart
 
 ## 3.ubuntu18.04上安装mysql后设置root用户密码
 
-+ sudo i登录后修改初始密码
++ 登录后修改初始密码
+
+```bash
+sudo -i
+mysql
+```
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
