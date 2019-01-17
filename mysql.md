@@ -72,9 +72,16 @@ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo service mysql restart
 ```
 
-## 3.ubuntu18.04设置root用户密码
+## 3.ubuntu18.04上安装mysql后设置root用户密码
 
-+ 查看默认debian-sys-maint用户的信息
++ sudo i登录后修改初始密码
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+```
+
+
++ 查看默认debian-sys-maint用户的信息（以下几步是补充方法）
 
 ```bash
 sudo cat /etc/mysql/debian.cnf
