@@ -115,30 +115,30 @@ sudo service mysql restart
 mysql -uroot -p
 ```
 
-## 4.Windows安装zip格式mysql 8.0.13
+## 4.Windows安装zip格式mysql 8.0.14
 
 + 下载zip包，解压到指定目录
 
 ```
-mysql-8.0.13-winx64.zip
-D:\Program Files\mysql-8.0.13-winx64
+mysql-8.0.14-winx64.zip
+D:\Program Files\mysql-8.0.14-winx64
 ```
 
 + 添加系统环境变量
 
 ```
-D:\Program Files\mysql-8.0.13-winx64\bin
+D:\Program Files\mysql-8.0.14-winx64\bin
 ```
 
 + 在安装目录下建立配置文件，内容如下：
 
 ```ini
-#D:\Program Files\mysql-8.0.13-winx64\my.cnf
+#D:\Program Files\mysql-8.0.14-winx64\my.cnf
 [mysql]
 default-character-set=utf8
 [mysqld]
-basedir=D:\Program Files\mysql-8.0.13-winx64
-datadir=D:\Program Files\mysql-8.0.13-winx64\data
+basedir=D:\Program Files\mysql-8.0.14-winx64
+datadir=D:\Program Files\mysql-8.0.14-winx64\data
 character-set-server=utf8
 ```
 
@@ -153,13 +153,13 @@ mysqld --initialize --user=mysql --console
 + 安装服务
 
 ```
-mysqld --install MySQL
+mysqld --install mysql
 ```
 
 + 启动服务
 
 ```
-net start MySQL
+net start mysql
 ```
 
 + 以初始密码登陆数据库
