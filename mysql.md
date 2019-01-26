@@ -124,7 +124,7 @@ mysql-8.0.14-winx64.zip
 D:\Program Files\mysql-8.0.14-winx64
 ```
 
-+ 添加系统环境变量
++ 添加系统环境变量(非必须，如果不添加需要cd到以下目录操作)
 
 ```
 D:\Program Files\mysql-8.0.14-winx64\bin
@@ -178,5 +178,5 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 + 停止服务
 
 ```
-net stop MySQL
+net stop mysql
 ```
