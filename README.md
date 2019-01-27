@@ -13,3 +13,5 @@ Jeanphy资料整理之MarkDown文档
 + [4.ubuntu相关](ubuntu.md)
 
 + [5.mongodb相关](mongodb.md)
+
++ [6.termux相关](termux.md)
