@@ -70,3 +70,9 @@ grep -c ^processor /proc/cpuinfo
 date -R  # 查看
 sudo dpkg-reconfigure tzdata  # 修改，选择Asia/Shanghai
 ```
+
+# 六、修改当前用户密码
+
+```bash
+passwd 用户名
+```
