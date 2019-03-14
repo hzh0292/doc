@@ -102,4 +102,13 @@ source 虚拟环境名/bin/activate
 deactivate
 ```
 
-## 6.持续更新中
+## 6.安装python3.7报错```No module named '_ctypes'
+```
+
+解决办法：安装libffi-dev
+
+```bash
+sudo apt install libffi-dev
+```
+
+## 7.持续更新中
