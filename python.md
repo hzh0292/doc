@@ -104,10 +104,16 @@ deactivate
 
 ## 6.安装python3.7报错```No module named '_ctypes'```
 
-解决办法：安装libffi-dev
+1、安装libffi-dev
 
 ```bash
 sudo apt install libffi-dev
+```
+
+2、安装其他所需组件
+
+```bash
+sudo apt-get install libbz2-dev libreadline-dev libsqlite3-dev
 ```
 
 ## 7.持续更新中
