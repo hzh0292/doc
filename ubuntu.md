@@ -76,3 +76,11 @@ sudo dpkg-reconfigure tzdata  # 修改，选择Asia/Shanghai
 ```bash
 passwd 用户名
 ```
+
+
+# 七、Wkhtmltopdf 失败 (错误代码: -8). 消息: b''
+
+```bash
+sudo apt install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+```
