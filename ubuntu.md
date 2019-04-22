@@ -44,6 +44,11 @@ git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 cd sublime-text-imfix && ./sublime-imfix
 ```
 
+## 中文本地化
+
+```bash
+git clone -b st3 https://github.com/rexdf/ChineseLocalization.git ~/.config/sublime-text-3/Packages/ChineseLocalization
+```
 # 三、查看Ubuntu版本
 
 ## 方法一
