@@ -21,7 +21,7 @@ listen_addresses = '*'                  # what IP address(es) to listen on;
 sudo vim /etc/postgresql/10/main/pg_hba.conf
 ```
 
-#### 添加IPv4连接
+#### 添加IPv4连接```0.0.0.0/0```或者特定IP地址
 
 ```ini
 # IPv4 local connections:
@@ -29,7 +29,7 @@ host    all             all             127.0.0.1/32            md5
 host    all             all             0.0.0.0/0               md5
 ```
 
-### 重启pg服务
+### 3.重启pg服务生效
 
 ```bash
 sudo service postgresql restart
