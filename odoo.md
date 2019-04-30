@@ -71,7 +71,7 @@ su odoo
 cd
 ```
 
-## 建立python3虚拟环境（以py3为例）
+## 建立python3虚拟环境（以venv12为例）
 
 ```bash
 sudo apt install -y python3-dev python3-venv
@@ -120,14 +120,16 @@ sudo apt-get install -y libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxr
 ```bash
 wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
 sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
+# 或者
+sudo apt install -y wkhtmltopdf
 ```
 
-## 安装requiremwnts.txt
+## 安装requiremwnts.txt(建议修改requirements.txt,不指定Pillow版本，将psycopg2改为psycopg2-binary（不指定版本），能减少出错)
 
 ```bash
 cd odoo
 pip install -r requirements.txt
-pip install phonenumbers
+pip install phonenumbers  # 可以不安装
 ```
 
 > 如果报错，再检查看缺什么插件，安装后继续。
