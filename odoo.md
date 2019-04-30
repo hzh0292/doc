@@ -8,7 +8,7 @@
 sudo vim /etc/postgresql/10/main/postgresql.conf
 ```
 
-#### 修改```listen_addresses```为```×```或者特定IP地址
+#### 修改```listen_addresses```为```*```或者特定IP地址
 
 ```ini
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
