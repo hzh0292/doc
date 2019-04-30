@@ -35,6 +35,17 @@ host    all             all             0.0.0.0/0               md5
 sudo service postgresql restart
 ```
 
+## odoo服务器设置：
+
+### 修改```odoo.conf```或```.odoorc```配置文件
+
+```ini
+db_host = False　　    # 这里填写数据库ip地址
+db_port = False　　    # 这是数据库的端口
+db_user = odoo　　     # 这里填写数据库登陆账号
+db_password = False　　# 这里填写数据库登陆密码
+```
+
 # 二、odoo12 AWS ubuntu18.04安装步骤
 
 ## 更新系统
