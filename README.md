@@ -2,7 +2,7 @@
 
 Jeanphy资料整理之MarkDown文档
 
-目前有五个主题：
+目前有6个主题：
 
 + [1.python和pip相关](python.md)
 
