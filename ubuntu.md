@@ -89,3 +89,10 @@ passwd 用户名
 sudo apt install ttf-mscorefonts-installer
 sudo fc-cache -f -v
 ```
+
+# 八、pycharm打开脚本报错Gtk-Message: Failed to load module "canberra-gtk-module"
+解决方法
+
+```bash
+sudo apt-get install libcanberra-gtk-module
+```
