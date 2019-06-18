@@ -124,3 +124,5 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install skypeforlinux
 ```
+
+### 请使用ibus输入法
