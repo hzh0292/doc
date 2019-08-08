@@ -560,7 +560,7 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 
 ### 解决办法：
 
-#### 找到ODOO目录下*:\Program Files (x86)\odoo*\python\Lib\\_strptime.py文件，在文件导入模块之后添加一行```locale.setlocale(locale.LC_ALL,'en')```保存，然后再重启ODOO服务或重启电脑。
+#### 找到ODOO目录下python\\Lib\\_strptime.py文件，在文件导入模块之后添加一行```locale.setlocale(locale.LC_ALL,'en')```保存，然后再重启ODOO服务或重启电脑。
 
 ## 九、Wkhtmltopdf 失败 (错误代码: -8). 消息: b''
 
