@@ -572,3 +572,33 @@ sudo fc-cache -f -v
 ## 十、登记付款提示“会计凭证不属同一会计科目”
 
 > Odoo12科目表中默认的 “222100 Tax payable” 类型是“应付”，我们需要把它修改成“流动负债”。
+
+## 十一、odoo数据库备份和恢复
+
+> odoo的数据库包括数据文件和filestore文件存储两部分，因此备份时两部分都需要备份。
+
+### 备份
+
+```bash
+pg_dump -Fc -f dbname.dump dbname
+#比如demo数据库
+#cd && pg_dump -Fc -f demo.dump demo
+tar cjf dbname.tgz dbname.dump .local/share/Odoo/filestore/dbname
+#tar cjf demo.tgz demo.dump .local/share/Odoo/filestore/demo
+```
+
+### 恢复
+
+```bash
+tar xf dbname.tgz
+#tar xf demo.tgz
+pg_restore -C -d dbname dbname.dump
+#pg_restore -C -d demo demo.dump
+```
+
+### 打包
+
+```bash
+cd && pg_dump -Fc -f prod.dump prod
+tar cjf prod.tgz prod.dump .local/share/Odoo/filestore/prod
+```
