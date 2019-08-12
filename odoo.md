@@ -580,7 +580,7 @@ sudo fc-cache -f -v
 ### 备份
 
 ```bash
-pg_dump -Fc -f dbname.dump dbname
+cd && pg_dump -Fc -f dbname.dump dbname
 #比如demo数据库
 #cd && pg_dump -Fc -f demo.dump demo
 tar cjf dbname.tgz dbname.dump .local/share/Odoo/filestore/dbname
@@ -594,11 +594,4 @@ tar xf dbname.tgz
 #tar xf demo.tgz
 pg_restore -C -d dbname dbname.dump
 #pg_restore -C -d demo demo.dump
-```
-
-### 打包
-
-```bash
-cd && pg_dump -Fc -f prod.dump prod
-tar cjf prod.tgz prod.dump .local/share/Odoo/filestore/prod
 ```
