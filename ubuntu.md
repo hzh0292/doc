@@ -161,5 +161,5 @@ scp -r -i aws.pem ubuntu@jeanphy.online:/home/ubuntu/online/myaddons/recard
 scp -P 22 -r directory user@host:/www/wwwroot/
 # 例如(上传默认目录为用户根目录)
 scp README.rst user@192.168.100.1:/home/user/rma/  # 上传文件
-scp -r src/img ubuntu@jeanphy.online:  # 上传目录
+scp -r src/img user@192.168.100.1:  # 上传目录
 ```
