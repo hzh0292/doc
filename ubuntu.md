@@ -139,3 +139,27 @@ sudo apt-get update
 # install typora
 sudo apt-get install typora
 ```
+
+## 十一、实用的scp命令
+
+### 下载文件或文件夹
+
+```bash
+scp -P 22 -r user@host:/www/wwwroot/ c:/user/aa/
+# -P 指定端口，默认为22；-r 目录操作；-i 验证文件登录。
+# 示例1，下载rma文件夹到/mnt/d
+scp -r user@192.168.100.1:/home/user/rma /mnt/d/
+# 示例2，下载README.rst到当前路径(省略下载目的路径则默认为当前工作路径)
+scp user@192.168.100.1:/home/user/rma/README.rst .
+# 示例3，验证文件登录下载(jeanphy.online代表主机IP或域名)
+scp -r -i aws.pem ubuntu@jeanphy.online:/home/ubuntu/online/myaddons/recard
+```
+
+### 上传文件及文件夹(类似下载，仅调整文件/目录在主机之前)
+
+```bash
+scp -P 22 -r directory user@host:/www/wwwroot/
+# 例如(上传默认目录为用户根目录)
+scp README.rst user@192.168.100.1:/home/user/rma/  # 上传文件
+scp -r src/img ubuntu@jeanphy.online:  # 上传目录
+```
