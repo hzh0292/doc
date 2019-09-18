@@ -170,10 +170,37 @@ scp -r src/img user@192.168.100.1:  # 上传目录
 sudo vim /etc/apt/sources.list.d/pgdg.list
 # 添加如下一行内容保存
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
-```
-
-```bash
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install postgresql-11
+```
+
+## 十三、Ubuntu 18.04更换阿里源
+
+### 备份/etc/apt/sources.list
+
+```bash
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+# 在/etc/apt/sources.list文件前面添加如下条目
+sudo vim /etc/apt/sources.list
+```
+
+```ini
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+```
+
+### 最后执行如下命令更新源
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
 ```
