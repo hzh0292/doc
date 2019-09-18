@@ -85,7 +85,21 @@ cd
 ### 建立python3虚拟环境（以venv为例）
 
 ```bash
-sudo apt install -y python3-dev python3-venv
+sudo apt-get install git
+                     python3 
+                     python3-pip 
+                     build-essential 
+                     wget 
+                     python3-dev 
+                     python3-venv 
+                     python3-wheel 
+                     libxslt-dev 
+                     libzip-dev 
+                     libldap2-dev 
+                     libsasl2-dev 
+                     python3-setuptools
+                     libpng12-0 
+                     gdebi -y
 python3 -m venv venv
 source venv/bin/activate
 pip install -U pip
@@ -113,22 +127,24 @@ Enter it again:*****
 exit
 ```
 
-### 安装字体等依赖项
+### 安装中文字体
 
 ```bash
-sudo apt-get install -y libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont2 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev fonts-wqy-zenhei fonts-wqy-microhei
+sudo apt install fonts-wqy-zenhei fonts-wqy-microhei -y
 ```
 
 ### 下载安装wkhtmltopdf
 
 ```bash
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
+wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.trusty_amd64.deb
+sudo gdebi wkhtmltox_0.12.5-1.trusty_amd64.deb
+sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
+sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 # 或者
 sudo apt install -y wkhtmltopdf
 ```
 
-### 安装requiremwnts.txt(建议修改requirements.txt,不指定Pillow版本，将psycopg2改为psycopg2-binary（不指定版本），能减少出错)
+### 安装requiremwnts.txt
 
 ```bash
 cd odoo
@@ -144,209 +160,7 @@ pip install phonenumbers  # 可以不安装
 ./odoo-bin -s
 ```
 
-
-## 三、odoo11百度云ubuntu16.04安装步骤
-
-### 更新系统
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### 新建用户（以odoo为例）
-
-```bash
-adduser odoo
-```
-
-### 设置权限
-
-```bash
-visudo
-```
-- 添加 odoo ALL=(ALL:ALL) ALL
-- Ctrl + O保存，Ctrl + X关闭
-### 切换用户
-
-```bash
-su odoo
-cd
-```
-
-### 建立python3虚拟环境（以py3为例）
-
-```bash
-sudo apt install -y python3-dev python3-venv
-python3 -m venv py3
-source py3/bin/activate
-pip install -i https://pypi.douban.com/simple -U pip
-```
-
-### 安装nodejs和less
-
-```bash
-sudo apt-get install -y npm
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-sudo npm install -g less
-```
-
-### 克隆源码
-
-```bash
-git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1
-```
-
-### 安装PostgreSQL
-
-```bash
-sudo apt-get install -y postgresql
-```
-
-### 创建数据库角色（以odoo为例）
-
-```bash
-sudo su - postgres
-createuser -d -U postgres -R -S -P odoo
-Enter password for new role: *****
-Enter it again:*****
-exit
-```
-
-### 安装字体等依赖项
-
-```bash
-sudo apt-get install -y fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont1 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev ttf-wqy-zenhei ttf-wqy-microhei
-```
-
-### 下载安装wkhtmltopdf
-
-```bash
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.5-1.xenial_amd64.deb
-```
-
-> wkhtmltopdf官方下载很慢，甚至不能下载，建议提前下载好从本地上传
-
-### 安装requiremwnts.txt
-
-```bash
-cd odoo
-pip install -r requirements.txt -i https://pypi.douban.com/simple
-pip install phonenumbers -i https://pypi.douban.com/simple
-```
-
-### 启动odoo
-
-```bash
-./odoo-bin -s
-```
-
-## 四、odoo11 AWS ubuntu18.04安装步骤
-
-### 更新系统
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### 切换到root用户
-
-```bash
-sudo -i
-```
-
-### 新建用户（以odoo为例）
-
-```bash
-adduser odoo
-```
-
-### 设置权限
-
-```bash
-visudo
-```
-- 添加 odoo ALL=(ALL:ALL) ALL
-- Ctrl + O保存，Ctrl + X关闭
-### 切换用户
-
-```bash
-su odoo
-cd
-```
-
-### 建立python3虚拟环境（以py3为例）
-
-```bash
-sudo apt install -y python3-dev python3-venv
-python3 -m venv venv11
-source venv11/bin/activate
-pip install -U pip
-```
-
-### 安装nodejs和less
-
-```bash
-sudo apt-get install -y npm
-sudo npm install -g less
-```
-
-### 克隆源码
-
-```bash
-git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1
-```
-
-### 安装PostgreSQL
-
-```bash
-sudo apt-get install -y postgresql
-```
-
-### 创建数据库角色（以odoo为例）
-
-```bash
-sudo su - postgres
-createuser -d -U postgres -R -S -P odoo
-Enter password for new role: *****
-Enter it again:*****
-exit
-```
-
-### 安装字体等依赖项
-
-```bash
-sudo apt-get install -y libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont2 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev fonts-wqy-zenhei fonts-wqy-microhei
-```
-
-### 下载安装wkhtmltopdf
-
-```bash
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
-```
-
-> wkhtmltopdf的源好像就在AWS上，因此不用担心下载速度。
-
-### 安装requiremwnts.txt
-
-```bash
-cd odoo
-pip install -r requirements.txt
-pip install phonenumbers
-```
-
-> 在AWS上pip安装就不要用豆瓣源了。
-
-> 如果报错，再检查看缺什么插件，安装后继续。
-
-### 启动odoo
-
-```bash
-./odoo-bin -s
-```
-
-## 五、创建Odoo数据库时的“new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)“问题
+## 三、创建Odoo数据库时的“new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)“问题
 
 ### Odoo创建数据库时，显示如下错误信息:
 
@@ -388,173 +202,7 @@ VACUUM FREEZE;
 
 6. Problem should be resolved.
 
-
-## 六、odoo12企业版百度云ubuntu16.04安装步骤
-
-### 更新系统
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### 新建用户（以odoo为例）
-
-```bash
-adduser odoo
-```
-
-### 设置权限
-
-```bash
-visudo
-```
-- 添加 odoo ALL=(ALL:ALL) ALL
-- Ctrl + O保存，Ctrl + X关闭
-### 切换用户
-
-```bash
-su odoo
-cd
-```
-
-### 建立python3虚拟环境（以venv为例）
-
-```bash
-sudo apt install -y python3-dev python3-venv
-python3 -m venv venv
-source venv/bin/activate
-pip install -i https://pypi.douban.com/simple -U pip
-```
-
-### 安装lrzsz和unzip
-
-```bash
-sudo apt install -y lrzsz unzip
-```
-
-### 上传企业版源码包（以odoo12e.zip为例）
-
-```bash
-rz
-```
-
-> 在弹出的窗口中选择企业版源码zip压缩包文件，这里是以Xshell和lrzsz为例，也可以使用其它方式将源码上传。
-
-### 解压源码,重命名文件夹为odoo
-
-```bash
-unzip odoo12e.zip
-mv odoo12e odoo
-```
-
-### 安装PostgreSQL
-
-```bash
-sudo apt-get install -y postgresql
-```
-
-### 创建数据库角色（以odoo为例）
-
-```bash
-sudo su - postgres
-createuser -d -U postgres -R -S -P odoo
-Enter password for new role: *****
-Enter it again:*****
-exit
-```
-
-### 安装字体等依赖项
-
-```bash
-sudo apt-get install -y fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont1 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev ttf-wqy-zenhei ttf-wqy-microhei
-```
-
-### 下载安装wkhtmltopdf
-
-```bash
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.5-1.xenial_amd64.deb
-```
-
-> wkhtmltopdf官方下载很慢，甚至不能下载，建议提前下载好从本地上传
-
-### 安装requiremwnts.txt
-
-```bash
-cd odoo
-pip install -r requirements.txt -i https://pypi.douban.com/simple
-pip install phonenumbers -i https://pypi.douban.com/simple
-```
-
-### 复制可执行文件并改名为odoo-bin,添加可执行权限
-
-```bash
-cp setup/odoo ./odoo-bin
-chmod a+x odoo-bin
-```
-
-### 启动odoo
-
-```bash
-./odoo-bin -s
-2018-10-22 08:05:25,559 19717 INFO ? odoo: Odoo version 12.0+e-xxxxxx 
-2018-10-22 08:05:25,560 19717 INFO ? odoo: Using configuration file at /home/odoo/.odoorc 
-2018-10-22 08:05:25,560 19717 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo/addons/12.0', '/home/odoo/odoo/odoo/addons'] 
-2018-10-22 08:05:25,560 19717 INFO ? odoo: database: default@default:default 
-2018-10-22 08:05:25,665 19717 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
-2018-10-22 08:05:25,781 19717 INFO ? odoo.service.server: HTTP service (werkzeug) running on instance-fxwaig44.novalocal:8069 
-......
-```
-
-### 创建数据库，安装应用......
-
-## 七、ubuntu18.04本地用户odoo12安装步骤（适用于虚拟机、WSL等）
-
-### 更新系统
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### 安装环境依赖
-
-```bash
-sudo apt install -y python3-dev python3-venv libxml2-dev libxslt1-dev fontconfig libfontconfig1 libxrender1 libjpeg-turbo8 libfontenc1 libxfont2 x11-common xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils libldap2-dev libsasl2-dev fonts-wqy-zenhei fonts-wqy-microhei postgresql wkhtmltopdf
-```
-
-### 创建数据库角色（同系统本地用户名）
-
-```bash
-sudo service postgresql start # WSL需要手动启动pg服务
-sudo su - postgres
-createuser -d -U postgres -R -S -P 角色名
-Enter password for new role: *****
-Enter it again:*****
-exit
-```
-
-### 克隆源码，安装依赖
-
-```bash
-git clone https://github.com/odoo/odoo.git -b 12.0 --depth=1
-cd odoo
-python3 -m venv venv
-source venv/bin/activate
-pip install -i https://pypi.douban.com/simple -U pip
-修改requirements.txt文件的内容，Pillow去掉版本号，psycopg2改为psycopg2-binary（减少安装出错）
-pip install -r requirements.txt -i https://pypi.douban.com/simple
-pip install phonenumbers -i https://pypi.douban.com/simple
-```
-
-> 如果报错，再检查看缺什么插件，安装后继续。
-
-### 默认配置启动odoo
-
-```bash
-./odoo-bin -s
-```
-
-## 八、windows安装odoo11/12/13，默认打不开。
+## 四、windows安装odoo11/12/13，默认打不开。
 
 > 从[Odoo Nightly builds](http://nightly.odoo.com)下载的exe安装包，安装后浏览器无法打开127.0.0.1:8069。
 
@@ -562,18 +210,18 @@ pip install phonenumbers -i https://pypi.douban.com/simple
 
 #### 找到odoo安装目录下python\\Lib\\_strptime.py文件，在文件导入模块之后添加一行```locale.setlocale(locale.LC_ALL,'en')```保存，然后再重启odoo服务或重启电脑。
 
-## 九、Wkhtmltopdf 失败 (错误代码: -8). 消息: b''
+## 五、Wkhtmltopdf 失败 (错误代码: -8). 消息: b''
 
 ```bash
 sudo apt install ttf-mscorefonts-installer
 sudo fc-cache -f -v
 ```
 
-## 十、登记付款提示“会计凭证不属同一会计科目”
+## 六、登记付款提示“会计凭证不属同一会计科目”
 
 > Odoo12科目表中默认的 “222100 Tax payable” 类型是“应付”，我们需要把它修改成“流动负债”。
 
-## 十一、odoo数据库备份和恢复
+## 七、odoo数据库备份和恢复
 
 > odoo的数据库包括数据文件和filestore文件存储两部分，因此备份时两部分都需要备份。
 
