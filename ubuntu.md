@@ -168,8 +168,11 @@ scp -r src/img user@192.168.100.1:  # 上传目录
 
 ```bash
 sudo vim /etc/apt/sources.list.d/pgdg.list
-# 添加如下内容保存
+# 添加如下一行内容保存
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+```
+
+```bash
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install postgresql-11
