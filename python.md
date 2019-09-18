@@ -116,4 +116,18 @@ sudo apt install libffi-dev
 sudo apt-get install libbz2-dev libreadline-dev libsqlite3-dev
 ```
 
-## 7.持续更新中
+## 7.更换pip为豆瓣源
+
+1、在主目录下创建.pip文件夹,然后在该目录下创建pip.conf文件
+
+```bash
+mkdir ~/.pip
+vim ~/.pip/pip.conf
+```
+
+2、pip.conf文件编写如下内容，保存退出即可
+
+```ini
+[global]
+index-url = https://pypi.douban.com/simple 
+```
