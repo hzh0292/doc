@@ -164,7 +164,7 @@ scp README.rst user@192.168.100.1:/home/user/rma/  # 上传文件
 scp -r src/img user@192.168.100.1:  # 上传目录
 ```
 
-## 十二、Ubuntu 18.04安装postgresql-11
+## 十二、Ubuntu 18.04安装postgresql-11/12
 
 ```bash
 sudo vim /etc/apt/sources.list.d/pgdg.list
@@ -172,7 +172,7 @@ sudo vim /etc/apt/sources.list.d/pgdg.list
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install postgresql-11
+sudo apt-get install postgresql-11/12
 ```
 
 ## 十三、Ubuntu 18.04更换阿里源
