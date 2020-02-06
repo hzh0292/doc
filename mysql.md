@@ -19,6 +19,8 @@ default-storage-engine = INNODB
 character-set-server = utf8
 collation-server = utf8_general_ci
 default-time-zone = '+8:00'
+# WSL MySQL >=8
+#innodb_use_native_aio=0
 ```
 
 + 保存并退出，重启MySQL服务
