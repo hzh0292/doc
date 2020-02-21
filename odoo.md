@@ -126,7 +126,7 @@ sudo apt install postgresql-11 -y
 	```
 
 	> 添加 odoo ALL=(ALL:ALL) ALL
-
+	>
 	> Ctrl + O保存，Ctrl + X关闭
 
 	+ 切换用户
@@ -202,7 +202,7 @@ addons_path = /opt/odoo/odoo/addons,/opt/odoo/myaddons
 ```
 
 > addons_path是必须设置的，设置为odoo源码包addons目录以及附加模块（如企业版模块）和第三方模块及自定义开发模块myaddons，逗号分隔。
-
+>
 > 常用其他参数有http_port指定端口，db_name或dbfilter指定数据库。
 
 + 创建systemd启动单元
