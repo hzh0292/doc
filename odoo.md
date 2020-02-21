@@ -50,17 +50,17 @@ db_password = False　　# 这里填写数据库登陆密码
 
 + 更换阿里源（可选）
 	
-  + 备份/etc/apt/sources.list
-  
-  ```bash
-  cp /etc/apt/sources.list /etc/apt/sources.list.bak
-  ```
-  
-  + 替换阿里源
-  
-  ```bash
-  sudo sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g;s/security.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
-  ```
+	+ 备份/etc/apt/sources.list
+
+	```bash
+	cp /etc/apt/sources.list /etc/apt/sources.list.bak
+	```
+
+	+ 替换阿里源
+
+	```bash
+	sudo sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g;s/security.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
+	```
   
 + 更新系统（可选）
 
@@ -70,22 +70,22 @@ sudo apt update && sudo apt upgrade -y
 
 + 更换Python的pip源（可选）
 
-  + 在主目录下创建.pip文件夹,然后在该目录下创建pip.conf文件
-  
-  ```bash
-  mkdir ~/.pip
-  vim ~/.pip/pip.conf
-  ```
-  
-  + pip.conf文件编写如下内容保存（更换为阿里源）：
-  
-  ```ini
-  [global]
-  index-url = https://mirrors.aliyun.com/pypi/simple/
-  
-  [install]
-  trusted-host=mirrors.aliyun.com
-  ```
+	+ 在主目录下创建.pip文件夹,然后在该目录下创建pip.conf文件
+
+	```bash
+	mkdir ~/.pip
+	vim ~/.pip/pip.conf
+	```
+
+	+ pip.conf文件编写如下内容保存（更换为阿里源）：
+
+	```ini
+	[global]
+	index-url = https://mirrors.aliyun.com/pypi/simple/
+
+	[install]
+	trusted-host=mirrors.aliyun.com
+	```
 	
 + 添加libpng12-0存储库，wkhtmltopdf将使用此依赖
 
@@ -107,33 +107,34 @@ sudo apt install postgresql-11 -y
 
 + 创建用户（可选，不建议用root用户创建服务）
 
-  + 切换到root用户
+	+ 切换到root用户
 
-  ```bash
-  sudo -i
-  ```
+	```bash
+	sudo -i
+	```
 
-  + 新建用户（此处以odoo用户名为例）
+	+ 新建用户（此处以odoo用户名为例）
 
-  ```bash
-  adduser odoo
-  ```
+	```bash
+	adduser odoo
+	```
 
-  + 设置权限
+	+ 设置权限
 
-  ```bash
-  visudo
-  ```
-  
-  > 添加 odoo ALL=(ALL:ALL) ALL
-  > Ctrl + O保存，Ctrl + X关闭
+	```bash
+	visudo
+	```
 
-  + 切换用户
+	> 添加 odoo ALL=(ALL:ALL) ALL
 
-  ```bash
-  su odoo
-  cd
-  ```
+	> Ctrl + O保存，Ctrl + X关闭
+
+	+ 切换用户
+
+	```bash
+	su odoo
+	cd
+	```
 
 + 创建数据库角色（此处以odoo用户名为例）
 
@@ -150,10 +151,12 @@ sudo apt install git python3 python3-pip build-essential wget python3-dev python
 ```
 
 + 安装依赖包
+
 ```bash
 sudo pip3 install -r https://github.com/odoo/odoo/raw/13.0/requirements.txt
 # sudo pip3 install -r https://github.com/odoo/odoo/raw/12.0/requirements.txt
 ```
+
 + 下载安装wkhtmltopdf（建议提前下载好）
 
 ```bash
@@ -199,24 +202,25 @@ addons_path = /opt/odoo/odoo/addons,/opt/odoo/myaddons
 ```
 
 > addons_path是必须设置的，设置为odoo源码包addons目录以及附加模块（如企业版模块）和第三方模块及自定义开发模块myaddons，逗号分隔。
+
 > 常用其他参数有http_port指定端口，db_name或dbfilter指定数据库。
 
 + 创建systemd启动单元
 
 	+ 创建服务文件
-  
-  ```bash
-  sudo vim /etc/systemd/system/odoo.service
-  ```
+
+	```bash
+	sudo vim /etc/systemd/system/odoo.service
+	```
   
 	+ 文件内容如下：
-  
+
 	```ini
 	[Unit]
 	Description=Odoo
 	Requires=postgresql.service
 	After=network.target postgresql.service
-	
+
 	[Service]
 	Type=simple
 	SyslogIdentifier=odoo
@@ -228,23 +232,23 @@ addons_path = /opt/odoo/odoo/addons,/opt/odoo/myaddons
 	Restart=always
 	RestartSec=5
 	StartLimitInterval=0
-	
+
 	[Install]
 	WantedBy=multi-user.target
 	```
-  
+
 	+ 重新加载systemd守护程序，然后启动odoo服务
-  
-  ```bash
-  sudo systemctl daemon-reload
-  sudo systemctl start odoo
-  ```
-  
+
+	```bash
+	sudo systemctl daemon-reload
+	sudo systemctl start odoo
+	```
+
 	+ 设置系统启动时启动odoo
-  
-  ```bash
-  sudo systemctl enable odoo
-  ```
+
+	```bash
+	sudo systemctl enable odoo
+	```
 
 ## 三、创建Odoo数据库时的“new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)“问题
 
