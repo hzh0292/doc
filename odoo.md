@@ -84,8 +84,8 @@ sudo apt update && sudo apt upgrade -y
   index-url = https://mirrors.aliyun.com/pypi/simple/
   
   [install]
-	trusted-host=mirrors.aliyun.com
-	```
+  trusted-host=mirrors.aliyun.com
+  ```
 	
 + 添加libpng12-0存储库，wkhtmltopdf将使用此依赖
 
