@@ -11,7 +11,7 @@ sudo vim /etc/postgresql/10/main/postgresql.conf
 ##### 修改```listen_addresses```为```*```或者特定IP地址
 
 ```ini
-#listen_addresses = 'localhost'         # what IP address(es) to listen on;
+# listen_addresses = 'localhost'         # what IP address(es) to listen on;
 listen_addresses = '*'                  # what IP address(es) to listen on;
 ```
 
@@ -95,6 +95,12 @@ sudo add-apt-repository "deb http://mirrors.aliyun.com/ubuntu/ xenial main"
 sudo apt update && sudo apt upgrade -y
 ```
 
++ 安装 Python 3 （odoo13需3.6及以上版本）+ pip3
+
+```bash
+sudo apt install git python3 python3-pip build-essential wget python3-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools -y
+```
+
 + 安装PostgreSQL-11/12数据库（可选，直接sudo apt install postgresql安装的是10版本）
 
 ```bash
@@ -125,8 +131,7 @@ sudo apt install postgresql-11 -y
 	visudo
 	```
 
-	> 添加 odoo ALL=(ALL:ALL) ALL
-	>
+	> 添加 odoo ALL=(ALL:ALL) ALL  
 	> Ctrl + O保存，Ctrl + X关闭
 
 	+ 切换用户
@@ -142,12 +147,6 @@ sudo apt install postgresql-11 -y
 sudo su - postgres
 createuser -d -U postgres -R -S -P odoo
 exit
-```
-
-+ 安装 Python 3 （odoo13需3.6及以上版本）+ pip3
-
-```bash
-sudo apt install git python3 python3-pip build-essential wget python3-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools -y
 ```
 
 + 安装依赖包
@@ -201,8 +200,7 @@ db_password = False
 addons_path = /opt/odoo/odoo/addons,/opt/odoo/myaddons
 ```
 
-> addons_path是必须设置的，设置为odoo源码包addons目录以及附加模块（如企业版模块）和第三方模块及自定义开发模块myaddons，逗号分隔。
->
+> addons_path是必须设置的，设置为odoo源码包addons目录以及附加模块（如企业版模块）和第三方模块及自定义开发模块myaddons，逗号分隔。  
 > 常用其他参数有http_port指定端口，db_name或dbfilter指定数据库。
 
 + 创建systemd启动单元
