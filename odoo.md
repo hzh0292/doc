@@ -183,8 +183,8 @@ sudo pip3 install num2words ofxparse phonenumbers
 + 创建odoo配置文件（假设放在/etc）
 
 ```bash
-sudo wget -P /etc https://github.com/odoo/odoo/raw/13.0/debian/odoo.conf
-# sudo wget -P /etc https://github.com/odoo/odoo/raw/12.0/debian/odoo.conf
+sudo wget -P /etc https://github.com/odoo/odoo/blob/13.0/debian/odoo.conf
+# sudo wget -P /etc https://github.com/odoo/odoo/blob/12.0/debian/odoo.conf
 ```
 
 + 打开配置文件新增或编辑各项参数：
