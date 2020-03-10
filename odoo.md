@@ -56,10 +56,28 @@ db_password = False　　# 这里填写数据库登陆密码
 	cp /etc/apt/sources.list /etc/apt/sources.list.bak
 	```
 
-	+ 替换阿里源
+	+ 替换阿里源（简易方法）
 
 	```bash
 	sudo sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g;s/security.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
+	```
+	
+	+ 替换阿里源方法二
+
+	```bash
+	sudo vim /etc/apt/sources.list
+	# 添加在文件最前面
+	deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+
 	```
   
 + 更新系统（可选）
