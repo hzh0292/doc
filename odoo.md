@@ -172,6 +172,7 @@ exit
 ```bash
 sudo pip3 install -r https://github.com/odoo/odoo/raw/13.0/requirements.txt
 # sudo pip3 install -r https://github.com/odoo/odoo/raw/12.0/requirements.txt
+# 因源码包里面一般都有requirements.txt，因此一般直接pip3 install -r requirements.txt安装即可，无需用网络地址安装。
 ```
 
 + 下载安装wkhtmltopdf（建议提前下载好）
