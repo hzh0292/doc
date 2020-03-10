@@ -203,6 +203,7 @@ sudo pip3 install num2words ofxparse phonenumbers
 ```bash
 sudo wget -P /etc https://github.com/odoo/odoo/raw/13.0/debian/odoo.conf
 # sudo wget -P /etc https://github.com/odoo/odoo/raw/12.0/debian/odoo.conf
+# 或者接新建配置文件，内容见下一步。sudo vim /etc/odoo.conf
 ```
 
 + 打开配置文件新增或编辑各项参数：
@@ -219,7 +220,7 @@ addons_path = /opt/odoo/odoo/addons,/opt/odoo/myaddons
 ```
 
 > addons_path是必须设置的，设置为odoo源码包addons目录以及附加模块（如企业版模块）和第三方模块及自定义开发模块myaddons，逗号分隔。  
-> 常用其他参数有http_port指定端口，db_name或dbfilter指定数据库。
+> 常用其他参数有http_port指定端口，db_name或dbfilter指定数据库。[Odoo Nightly builds](http://nightly.odoo.com/13.0/nightly/src/)下载的源码包无odoo-bin执行文件，需在setup目录下复制出来odoo文件，并改名为odoo-bin同时增加执行权限。cp setup/odoo odoo-bin && chmod +x odoo-bin
 
 + 创建systemd启动单元
 
