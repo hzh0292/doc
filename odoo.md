@@ -110,6 +110,7 @@ sudo apt update && sudo apt upgrade -y
 ```bash
 sudo add-apt-repository universe
 sudo add-apt-repository "deb http://mirrors.aliyun.com/ubuntu/ xenial main"
+# sudo add-apt-repository "deb http://mirrors.kernel.org/ubuntu/ xenial main"
 sudo apt update && sudo apt upgrade -y
 ```
 
