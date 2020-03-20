@@ -181,7 +181,7 @@ sudo pip3 install -r https://github.com/odoo/odoo/raw/13.0/requirements.txt
 ```bash
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.trusty_amd64.deb
 sudo dpkg -i wkhtmltox_0.12.5-1.trusty_amd64.deb
-sudo apt --fix-broken install
+sudo apt --fix-broken install -y
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 ```
