@@ -116,7 +116,7 @@ sudo apt update && sudo apt upgrade -y
 + 安装 Python 3 （odoo13需3.6及以上版本）+ pip3
 
 ```bash
-sudo apt install git python3 python3-pip build-essential wget python3-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools -y
+sudo apt install git python3 python3-pip build-essential wget python3-dev python3-wheel libxslt1-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools -y
 ```
 
 + 安装PostgreSQL-11/12数据库（可选，直接sudo apt install postgresql安装的是10版本）
