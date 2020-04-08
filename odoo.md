@@ -196,6 +196,7 @@ sudo apt install fonts-wqy-zenhei fonts-wqy-microhei -y
 
 ```bash
 git clone https://www.github.com/odoo/odoo --depth 1 -b 13.0
+# git clone https://gitee.com/mirrors/odoo -b 13.0 --depth=1
 # git clone https://www.github.com/odoo/odoo --depth 1 -b 12.0
 sudo pip3 install num2words ofxparse phonenumbers
 ```
