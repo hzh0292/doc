@@ -165,6 +165,7 @@ sudo apt install postgresql-11 -y
 ```bash
 sudo su - postgres
 createuser -d -U postgres -R -S -P odoo
+# sudo su - postgres -c "createuser -s odoo"
 exit
 ```
 
@@ -198,7 +199,7 @@ sudo apt install fonts-wqy-zenhei fonts-wqy-microhei -y
 git clone https://www.github.com/odoo/odoo --depth 1 -b 13.0
 # git clone https://gitee.com/mirrors/odoo -b 13.0 --depth=1
 # git clone https://www.github.com/odoo/odoo --depth 1 -b 12.0
-sudo pip3 install num2words ofxparse phonenumbers
+# pip3 install phonenumbers # 可选
 ```
 
 + 创建odoo配置文件（假设放在/etc）
