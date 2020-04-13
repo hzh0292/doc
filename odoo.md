@@ -207,7 +207,7 @@ git clone https://www.github.com/odoo/odoo --depth 1 -b 13.0
 ```bash
 sudo wget -P /etc https://github.com/odoo/odoo/raw/13.0/debian/odoo.conf
 # sudo wget -P /etc https://github.com/odoo/odoo/raw/12.0/debian/odoo.conf
-# 或者接新建配置文件，内容见下一步。sudo vim /etc/odoo.conf
+# 或者直接新建配置文件，内容见下一步。sudo vim /etc/odoo.conf
 ```
 
 + 打开配置文件新增或编辑各项参数：
