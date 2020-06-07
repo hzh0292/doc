@@ -12,3 +12,17 @@ $ termux-setup-storage
 mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties
 exit
 ```
+
+## 三、设置Termux欢迎语
+
+```bash
+vim $PREFIX/etc/motd
+```
+
+## 四、vim中文字符乱码
+
+```bash
+vim .vimrc
+set encoding=utf-8
+set fileencodings=utf-8
+```
