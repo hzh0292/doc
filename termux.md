@@ -26,3 +26,12 @@ vim .vimrc
 set encoding=utf-8
 set fileencodings=utf-8
 ```
+
+## 五、更改软件源
+
+编辑 $PREFIX/etc/apt/sources.list 修改为如下内容
+
+```bash
+# The termux repository mirror from TUNA:
+deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main
+```
