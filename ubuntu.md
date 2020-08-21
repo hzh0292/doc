@@ -204,3 +204,25 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted unive
 sudo apt-get update
 sudo apt-get upgrade
 ```
+
+## 十四、Ubuntu server允许root用户登录
+
+### 1.重置root密码
+
+```bash
+sudo passwd root
+```
+
+### 2.修改ssh配置文件
+
+```bash
+sudo vim /etc/ssh/sshd_config
+```
+
+> 修改PermitRootLogin后的默认值为yes
+
+### 3.重启ssh守护进程
+
+```bash
+sudo service ssh restart
+```
