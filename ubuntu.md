@@ -226,3 +226,9 @@ sudo vim /etc/ssh/sshd_config
 ```bash
 sudo service ssh restart
 ```
+
+## 十五、Centos 8 Net Install设置软件源
+
+```bash
+https://mirrors.aliyun.com/centos/8/BaseOS/x86_64/os/
+```
