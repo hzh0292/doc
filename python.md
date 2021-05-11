@@ -226,3 +226,5 @@ vim ~/.pip/pip.conf
 [global]
 index-url = https://pypi.douban.com/simple 
 ```
+
+> pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
